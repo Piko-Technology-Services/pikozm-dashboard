@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
-    <nav className="navbar default-layout-navbar fixed-top d-flex flex-row">
-      <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+    <nav className="navbar default-layout-navbar fixed-top d-flex flex-row bg-dark m-0 p-0">
+      <div className="text-center navbar-brand-wrapper d-flex align-items-center bg-dark justify-content-center">
         <a className="navbar-brand brand-logo" href="/">
           <img src="/assets/images/logo.svg" alt="logo" />
         </a>

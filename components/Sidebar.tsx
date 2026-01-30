@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Sidebar() {
   return (
-    <nav className="sidebar sidebar-offcanvas" id="sidebar">
+    <nav className="sidebar sidebar-offcanvas bg-dark" id="sidebar">
       <ul className="nav">
         <li className="nav-item nav-category">Main</li>
 

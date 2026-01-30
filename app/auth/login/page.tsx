@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Cookies from "js-cookie";
 import { login } from "@/services/auth.service";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -33,8 +34,15 @@ export default function LoginPage() {
 
     try {
       const res = await login({ email, password });
+      console.log("Login response:", res);  
+      
       localStorage.setItem("token", res.data.token);
-
+      // ✅ store token in cookie
+      Cookies.set("token", res.data.token, {
+        expires: 7,
+        secure: false, // true in production with HTTPS
+        sameSite: "lax",
+      });
       // 👉 redirect after login
       router.push("/dashboard");
     } catch (err: any) {
