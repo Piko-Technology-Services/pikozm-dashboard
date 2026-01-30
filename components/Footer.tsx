@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="footer-inner-wraper">
         <div className="d-sm-flex justify-content-center justify-content-sm-between">
           <span className="text-muted">
-            © {new Date().getFullYear()} Piko Technologies
+            © {new Date().getFullYear()} Musy Technologies Limited
           </span>
         </div>
       </div>

@@ -1,20 +1,23 @@
-// app/dashboard/layout.tsx
-import '../../public/assets/vendors/mdi/css/materialdesignicons.min.css';
-import '../../public/assets/vendors/flag-icon-css/css/flag-icon.min.css';
-import '../../public/assets/vendors/css/vendor.bundle.base.css';
-import '../../public/assets/vendors/font-awesome/css/font-awesome.min.css';
-import '../../public/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css';
-import '../../public/assets/css/style.css';
-
-import Script from 'next/script';
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
 import Footer from '@/components/Footer';
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-     <>
-      <div className="container-scroller m-0">
+    <>
+      {/* Template CSS */}
+      <link rel="stylesheet" href="/assets/vendors/mdi/css/materialdesignicons.min.css" />
+      <link rel="stylesheet" href="/assets/vendors/flag-icon-css/css/flag-icon.min.css" />
+      <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css" />
+      <link rel="stylesheet" href="/assets/vendors/font-awesome/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css" />
+      <link rel="stylesheet" href="/assets/css/style.css" />
+
+      <div className="container-scroller">
         <Navbar />
 
         <div className="container-fluid page-body-wrapper">
@@ -31,13 +34,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       </div>
 
       {/* Template JS */}
-      <Script src="/assets/vendors/js/vendor.bundle.base.js" strategy="beforeInteractive" />
-      <Script src="/assets/vendors/chart.js/Chart.min.js" strategy="lazyOnload" />
-      <Script src="/assets/vendors/jquery-circle-progress/js/circle-progress.min.js" strategy="lazyOnload" />
-      <Script src="/assets/js/off-canvas.js" strategy="lazyOnload" />
-      <Script src="/assets/js/hoverable-collapse.js" strategy="lazyOnload" />
-      <Script src="/assets/js/misc.js" strategy="lazyOnload" />
-      <Script src="/assets/js/dashboard.js" strategy="lazyOnload" />
+      <script src="/assets/vendors/js/vendor.bundle.base.js" />
+      <script src="/assets/vendors/chart.js/Chart.min.js" />
+      <script src="/assets/vendors/jquery-circle-progress/js/circle-progress.min.js" />
+      <script src="/assets/js/off-canvas.js" />
+      <script src="/assets/js/hoverable-collapse.js" />
+      <script src="/assets/js/misc.js" />
+      <script src="/assets/js/dashboard.js" />
     </>
   );
 }
