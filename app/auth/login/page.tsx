@@ -39,7 +39,7 @@ export default function LoginPage() {
       localStorage.setItem("token", res.data.token);
       // ✅ store token in cookie
       Cookies.set("token", res.data.token, {
-        expires: 7,
+        expires: 1 / 48, // 30 minutes (1 day / 48)
         secure: false, // true in production with HTTPS
         sameSite: "lax",
       });
