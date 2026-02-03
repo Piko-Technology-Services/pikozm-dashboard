@@ -37,14 +37,19 @@ export default function LoginPage() {
       console.log("Login response:", res);  
       
       localStorage.setItem("token", res.data.token);
-      // ✅ store token in cookie
+      // Store token with expiration in localStorage
+      const expiresAt = Date.now() + 30 * 60 * 1000; // 30 minutes from now
+      localStorage.setItem("token_expires_at", expiresAt.toString());
+
+      // // ✅ store token in cookie
       Cookies.set("token", res.data.token, {
         expires: 1 / 48, // 30 minutes (1 day / 48)
         secure: false, // true in production with HTTPS
         sameSite: "lax",
       });
       // 👉 redirect after login
-      router.push("/dashboard");
+      router.replace("/dashboard");
+
     } catch (err: any) {
       setError(
         err?.response?.data?.message ||
